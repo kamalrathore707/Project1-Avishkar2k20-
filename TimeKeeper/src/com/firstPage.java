@@ -105,17 +105,22 @@ public class firstPage extends JFrame implements Runnable{
         b3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("hello");
+                TimerPage.timer();
             }
         });
         contentPane.add(b3);
-        b4=new JButton("CALENDER");
+        b4=new JButton("EVENTS");
         b4.setBounds(50,250,180,30);
         b4.setBackground(Color.GREEN);
         b4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               System.out.println("hello");
+                try{
+                    Event.openEvent();
+                }
+                catch (Exception ex){
+                    ex.printStackTrace();
+                }
             }
         });
         contentPane.add(b4);
